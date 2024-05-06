@@ -276,8 +276,12 @@ article {
 }
 /* footer */
 footer {
+  background-color: #0760e7;
+  background-image: url("assets/images/bg.jpg");
+  background-blend-mode: exclusion;
   padding-block: 20px;
-  background-color: #223e67;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   color: white;
 }
@@ -325,4 +329,19 @@ footer {
 }
 .footer-col2 {
   padding-inline: 10px;
+}
+.thongke-info {
+  position: relative;
+  padding-left: 20px;
+}
+.thongke-info::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 153, 0);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+
+  height: 50%;
+  width: 10px;
 }
