@@ -319,7 +319,7 @@ footer {
   justify-content: space-between;
 }
 :is(.footer-col1, .footer-col2) .footer-col {
-  font-size: 16px;
+  font-size: 12px;
 }
 .footer-col2_row3 {
   gap: 5px;
