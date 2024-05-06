@@ -11,6 +11,9 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 /* general stylings */
+html {
+  overflow-x: hidden;
+}
 
 h1,
 h2,
@@ -25,7 +28,10 @@ li {
 img {
   max-width: 100%;
 }
-
+select,
+input {
+  max-width: 100%;
+}
 /* utils */
 .height-parent {
   height: 100%;
@@ -54,6 +60,7 @@ img {
 .border-line {
   width: 100%;
   border: 1px dashed white;
+  margin-block: 10px;
 }
 .entity {
   display: inline-block;
@@ -179,7 +186,7 @@ header {
 }
 /* cta */
 .cta {
-  padding: 15px 10px;
+  padding: 30px 15px;
   border: 1px dashed rgb(123, 171, 255);
 }
 .cta :is(input, select) {
@@ -270,7 +277,7 @@ article {
 /* footer */
 footer {
   padding-block: 20px;
-  background-color: #02265c;
+  background-color: #223e67;
   width: 100%;
   color: white;
 }
@@ -290,4 +297,32 @@ footer {
 }
 .footer-col {
   display: flex;
+  padding-block: 5px;
+}
+.footer-header_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-bottom: 10px;
+}
+.footer-header_container img {
+  grid-column: 3;
+}
+.footer-header {
+  font-size: medium;
+}
+.footer-col3 .footer-col {
+  justify-content: space-between;
+}
+:is(.footer-col1, .footer-col2) .footer-col {
+  font-size: 16px;
+}
+.footer-col2_row3 {
+  gap: 5px;
+}
+.footer-icon {
+  margin-right: 10px;
+}
+.footer-col2 {
+  padding-inline: 10px;
 }
