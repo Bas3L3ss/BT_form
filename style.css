@@ -1,4 +1,9 @@
 /* reset */
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 *,
 *::after,
 *::before {
@@ -31,6 +36,13 @@ img {
 select,
 input {
   max-width: 100%;
+  border-radius: 5px;
+}
+:is(input, select):focus {
+  outline: 2px solid #4f88eb;
+}
+:is(input, select):hover {
+  cursor: pointer;
 }
 /* utils */
 .height-parent {
@@ -67,7 +79,7 @@ input {
   margin-left: 5px;
 }
 /* select arrow  */
-/* .custom-select {
+.custom-select {
   position: relative;
   display: inline-block;
 }
@@ -76,22 +88,24 @@ input {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 5px 30px 5px 10px;
-  border-radius: 5px;
 }
 
 .custom-select .select-arrow {
+  pointer-events: none;
   position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
+  top: 2px;
+  right: 0;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpolygon fill='gray' points='12,0 24,24 0,24'/%3E%3C/svg%3E");
+  width: 20px;
+  height: 80%;
+  background-position: center;
+  border-right: 2px solid #7babff;
+  background-repeat: no-repeat;
+  background-size: 7px;
+  padding-right: 30px;
+}
 
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #999;
-} */
 /* arrow */
 .arrow {
   --arrow-width: 10px;
@@ -124,7 +138,7 @@ nav {
   text-transform: uppercase;
   padding: 10px 12px;
   transition: 0.1s;
-  font-size: 0.85rem;
+  font-size: clamp(0.3rem, 0.85vw, 0.85rem);
 }
 .nav-item:hover {
   cursor: pointer;
@@ -168,19 +182,12 @@ header {
   border-radius: 2px;
   position: relative;
 }
-.header-form::before {
-  z-index: 2;
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='white' d='M21.71 20.29l-5.02-5.02A7.47 7.47 0 0 0 18 10.5C18 6.36 14.64 3 10.5 3S3 6.36 3 10.5 6.36 18 10.5 18c1.48 0 2.85-.52 3.9-1.39l5.02 5.02c.39.39 1.02.39 1.41 0a.996.996 0 0 0 0-1.41zM10.5 16.5c-2.48 0-4.5-2.02-4.5-4.5S8.02 7.5 10.5 7.5 15 9.52 15 12s-2.02 4.5-4.5 4.5z'%3E%3C/path%3E%3C/svg%3E");
-  background-size: contain;
-  background-position: center;
+.header-form input {
+  background-image: url("assets/images/search.jpg");
+  background-size: 20px;
+  background-position: 95%;
   background-repeat: no-repeat;
-  background-color: #0ca9ec;
-  position: absolute;
-  top: 7px;
-  left: 84%;
-  width: 20px;
-  height: 25px;
+  background-color: #fafafa;
 
   padding-inline: 20px;
 }
@@ -190,7 +197,7 @@ header {
   border: 1px dashed rgb(123, 171, 255);
 }
 .cta :is(input, select) {
-  border: 1px solid rgb(123, 171, 255);
+  border: 1px solid #7babff;
   padding: 2px 5px;
 }
 
@@ -251,6 +258,7 @@ article {
 .cta-ttdkxt .cta-contentWrapping {
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
+  width: 100%;
   justify-content: center;
 }
 .cta-submission {
